@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Caesar Cipher</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root">
-      <h1>Hello world!</h1>
+
+<head>
+  <meta charset="utf-8">
+  <title>Caesar Cipher</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="root">
+    <h1>Codificar/Decodificar mensajes de whatsapp</h1>
+  </div>
+  <div class="secciones">
+    <div>
+      Número de Desplazamientos <input type="number" class="msj" id="offset" min="1" max="99" maxlength="2">
     </div>
-    <script src="cipher.js"></script>
-    <script src="index.js"></script>
-  </body>
+    <div>
+      <input type="text" class="msj" id="mensajedeWA" placeholder="Escribe aqui tu mensaje de Whatsapp" size="50">
+    </div>
+    <div>
+      <input type="button" value="Codificar" onclick="clickCodificar()">
+      <input type="button" value="Decodificar" onclick="clickDecodificar()">
+    </div>
+  </div>
+  <div class="secciones">
+    <div id="textoEjemplo">Esta app funciona asi...</div>
+    <div id="resultados">
+      <div>
+        <input type="text" class="msj" id="mensajedeWA2" disabled size="50">
+      </div>
+      <div>
+        <input type="button" value="Borrar" onclick="">
+      </div>
+    </div>
+  </div>
+
+  <script src="cipher.js"></script>
+  <script src="index.js"></script>
+</body>
+
 </html>
