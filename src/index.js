@@ -8,43 +8,24 @@ function saveOffset() {
     let numberOffset = parseInt(document.getElementById("offset").value);
     return numberOffset;
 }
+document.getElementById("clickCodi").addEventListener("click", clickCodificar)
 
 function clickCodificar() {
     const mensaje = saveMensaje();
     const offSet = saveOffset();
-    const mensajeMayusculas = mensaje.toUpperCase();
-    let cadenaFinal = ""
-    for (let i = 0; i < mensajeMayusculas.length; i++) {
-        const x = mensajeMayusculas.charCodeAt(i);
-        if (x > 64 && x < 91) {
-            const formula = (x - 65 + offSet) % 26 + 65;
-            const regresoFormula = String.fromCharCode(formula)
-            cadenaFinal = cadenaFinal + regresoFormula;
-        } else {
-            cadenaFinal = cadenaFinal + String.fromCharCode(x);
-        }
-    }
-    mostrarTxt(cadenaFinal)
-    //console.log(cadenaFinal)
+    const mostrarCipher = window.cipher.encode(offSet, mensaje);
+    mostrarTxt(mostrarCipher)
+
 }
+
+document.getElementById("clickDeco").addEventListener("click", clickDecodificar)
 
 function clickDecodificar() {
     const mensaje = saveMensaje();
     const offSet = saveOffset();
-    const mensajeMayusculas = mensaje.toUpperCase();
-    let cadenaFinal = ""
-    for (let i = 0; i < mensajeMayusculas.length; i++) {
-        const x = mensajeMayusculas.charCodeAt(i);
-        if (x > 64 && x < 91) {
-            const formula = (x + 65 - offSet) % 26 + 65;
-            const regresoFormula = String.fromCharCode(formula)
-            cadenaFinal = cadenaFinal + regresoFormula;
-        } else {
-            cadenaFinal = cadenaFinal + String.fromCharCode(x);
-        }
-    }
-    mostrarTxt(cadenaFinal)
-    //console.log(cadenaFinal)
+    const mostrardecode = window.cipher.decode(offSet, mensaje)
+    mostrarTxt(mostrardecode)
+
 }
 
 function mostrarTxt(mensaje) {

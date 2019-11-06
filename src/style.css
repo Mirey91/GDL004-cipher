@@ -4,17 +4,28 @@ body {
     background: linear-gradient(#4FCE5D 30%, #FFFFFF 100%);
     padding: 8em;
 }
+
 input[type=text] {
     padding: 16px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border-radius: 12px;
   }
+
 .msj {
     size:300px;
     border: #435A64 5px solid;
 }
+
 #resultados {
     display: block;
+}
+
+.btn {
+    background: #455A64;
+    cursor:pointer;
+    width: 25%;
+    height: 35px;
+ 
 }
 
