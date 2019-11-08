@@ -1,6 +1,7 @@
 global.window = global;
 require('../src/cipher');
 
+
 describe('cipher', () => {
   it('debería ser un object', () => {
     expect(typeof cipher).toBe('object');
@@ -11,7 +12,7 @@ describe('cipher', () => {
     });
     it('debería retornar "HIJKLMNOPQRSTUVWXYZABCDEFG" para "ABCDEFGHIJKLMNOPQRSTUVWXYZ" con offset 33', () => {
       //escribe aquí tus test
-      expect(cipher.encode(33, "ABCDEFGHIJKLMNOPQRSTUVWXYZ")).toBe("HIJKLMNOPQRSTUVWXYZABCDEFG");
+      expect(cipher.encode(33, "A BCDEFGHIJKLMNOPQRSTUVWXYZ")).toBe("H IJKLMNOPQRSTUVWXYZABCDEFG");
     });
     // Hacker edition
     //
@@ -40,7 +41,7 @@ describe('cipher', () => {
     });
     it('debería retornar "ABCDEFGHIJKLMNOPQRSTUVWXYZ" para "HIJKLMNOPQRSTUVWXYZABCDEFG" con offset 33', () => {
      //escribe aquí tus test
-     expect(cipher.decode(33,"HIJKLMNOPQRSTUVWXYZABCDEFG")).toBe("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+     expect(cipher.decode(33,"H IJKLMNOPQRSTUVWXYZABCDEFG")).toBe("A BCDEFGHIJKLMNOPQRSTUVWXYZ");
     });
     //
     // Hacker edition

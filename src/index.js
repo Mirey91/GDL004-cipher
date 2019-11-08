@@ -38,4 +38,5 @@ function reiniciar() {
     document.getElementById("mensajedeWA2").value = "";
     document.getElementById("offset").value = "";
     document.getElementById("resultados").style.display = "none";
+    
 }
